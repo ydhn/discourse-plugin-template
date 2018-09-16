@@ -6,7 +6,8 @@ module DiscoursePluginTemplate
     end
 
     def test
-      render json: { test: "hello" }
+      @category = Category.find_by(id: params[:id].to_i)
+      render json: @category
     end
   end
 end
